@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'/>
+    <title>小蝌蚪找妈妈...</title>
+    <!--<link rel="stylesheet" href="./css/index.css">-->
+    <style>
+        /*结束页*/
+        #baidusearch {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #baidulogo {
+            position: absolute;
+            left: 42%;
+            top: 5%;
+            width: 20%;
+
+        }
+
+        #last {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #search {
+            position: absolute;
+            width: 65%;
+            height: 6%;
+            top: 55%;
+            left: 19%;
+        }
+
+        #line {
+            position: absolute;
+            width: 68.8%;
+            height: 7%;
+            top: 54%;
+            left: 18%;
+            animation: 2s fadeInOut ease-in-out infinite alternate;
+
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #psearch {
+            position: absolute;
+            left: 38%;
+            bottom: -6%;
+            width: 30%;
+
+        }
+
+        #help{
+            position: absolute;
+            left:44.5%;
+            bottom:15.5%;
+            width: 8%;
+            transition: 1s all;
+            animation: 1.25s three ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes three {
+            0%{
+                transform: scale(1,1);
+            }
+            100%{
+                transform: scale(0.75,0.75);
+            }
+        }
+
+        /*遮罩层*/
+        #share {
+            position: absolute;
+            width: 30%;
+            height: 24%;
+            right: 33%;
+            bottom: 0%;
+            background-color: rgba(0, 0, 0, 0);
+            /*border-radius: 50%;*/
+            z-index: 8;
+        }
+
+        #sharebox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            z-index: 99;
+        }
+
+        #next {
+            position: absolute;
+            width: 44%;
+            top: 4%;
+            right: 14%;
+        }
+
+        #whitekedou {
+            position: absolute;
+            top: 4%;
+            right: 5%;
+            width: 10%;
+            transform: rotate(30deg);
+        }
+        /*横竖屏幕提示判断*/
+        .mod-orient-layer {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #76bbd3;
+            z-index: 9999;
+        }
+
+        .mod-orient-layer_content {
+            position: absolute;
+            width: 100%;
+            top: 25%;
+            text-align: center
+        }
+
+        .mod-orient-layer_icon-orient {
+            margin-bottom: 40px;
+            background: url("../images/tipre.png") no-repeat 0 0;
+            background-size: 100% 100%;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -webkit-animation: rotation infinite 1.5s ease-in-out;
+            animation: rotation infinite 1.5s ease-in-out;
+        }
+
+        @keyframes rotation {
+            10% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg)
+            }
+            50%, 60% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+            90% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg)
+            }
+            100% {
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg)
+            }
+        }
+
+        .text img {
+            position: absolute;
+            width: 25%;
+            left: 36%;
+            top: 66%;
+        }
+
+        /*横竖屏幕提示结束*/
+    </style>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/app.js"></script>
+</head>
+<body>
+    <!--横竖屏幕-->
+    <div id="orientLayer" class="mod-orient-layer">
+        <div class="mod-orient-layer_content">
+            <i class="icon mod-orient-layer_icon-orient"></i>
+            <div class="text"><img src="images/shupin.png" alt=""></div>
+        </div>
+    </div>
+    <!--结束页-->
+    <div id="baidusearch">
+        <img src="images/last.jpg" alt="" id="last">
+        <img src="images/p-search.png" alt="" id="psearch">
+        <img src="images/xunren.png" alt="" id="help">
+        <img src="images/baidusearch.png" alt="" id="search">
+        <img src="images/line.png" alt="" id="line">
+        <img src="images/baidulogo.png" alt="" id="baidulogo">
+    </div>
+</body>
+</html>

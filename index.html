@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'/>
+    <title>小蝌蚪找妈妈...</title>
+</head>
+
+<link rel="stylesheet" href="./css/index.css">
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="./js/loading.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/index.js"></script>
+<!--统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0f6d943e18a0a936e3e5c767a8ac92d2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+
+</script>
+<body>
+
+<!--横竖屏幕-->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer_content">
+        <i class="icon mod-orient-layer_icon-orient"></i>
+        <div class="text"><img src="images/shupin.png" alt=""></div>
+    </div>
+</div>
+
+<!--视频-->
+<video id="myvideo" src="images/iosvideo.mp4"  preload="auto" poster="images/loading-bac.png" webkit-playsinline="true" playsinline x5-video-player-type="h5" x5-video-player-fullscreen="true" x-webkit-airplay="true" style="object-fit: fill"></video>
+<!--声音-->
+
+
+<!--主页-->
+<div id="facebox">
+    <img src="images/loading-bac.jpg" alt="" id="face">
+    <img src="images/000.Gif" alt="" id="kedou">
+    <img src="images/star.png" alt="" id="star">
+    <img src="images/moom.png" alt="" id="moom">
+</div>
+
+<audio src="images/BGM.mp3" preload="auto" autoplay="autoplay" loop="loop" id="audio"></audio>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    autoPlayAudio();
+    autoPlayAudio2();
+    function autoPlayAudio() {        
+        wx.ready(function() {
+            var globalAudio=document.getElementById("audio");
+            globalAudio.play();
+        });
+    }
+
+    function autoPlayAudio2() {
+        window.onload = function() {
+            // alert(typeof WeixinJSBridge);
+            WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+                // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+                // alert(e.err_msg);
+                document.getElementById('audio').play();
+            });
+        };
+    }
+</script>
+</body>
+</html>
